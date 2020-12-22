@@ -8,13 +8,18 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "node test.js"
+    "test": "node test.js",
+    "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
     "ejs": "^2.5.6",
     "express": "^4.15.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@storybook/html": "^5.3.21",
+    "babel-loader": "^8.2.2",
+    "ejs-compiled-loader": "^1.1.0",
     "got": "^11.3.0",
     "tape": "^4.7.0"
   },
