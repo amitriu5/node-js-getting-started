@@ -20,7 +20,10 @@
     "@storybook/addon-actions": "^6.1.11",
     "@storybook/addon-essentials": "^6.1.11",
     "@storybook/addon-links": "^6.1.11",
+    "@storybook/addons": "^6.1.11",
+    "@storybook/api": "^6.1.11",
     "@storybook/html": "^6.1.11",
+    "@storybook/theming": "^6.1.11",
     "got": "^11.3.0",
     "tape": "^4.7.0"
   },
