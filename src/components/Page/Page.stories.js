@@ -3,21 +3,10 @@ import * as HeaderStories from '../Header/Header.stories';
 
 export default {
   title: 'Example/Page',
-  argTypes: {
-    onLogin: { action: 'onLogin' },
-    onLogout: { action: 'onLogout' },
-    onCreateAccount: { action: 'onCreateAccount' },
-  },
+  argTypes: {},
 };
 
 const Template = (args) => createPage(args);
 
-export const LoggedIn = Template.bind({});
-LoggedIn.args = {
-  ...HeaderStories.LoggedIn.args,
-};
+export const Primary = Template.bind({});
 
-export const LoggedOut = Template.bind({});
-LoggedOut.args = {
-  ...HeaderStories.LoggedOut.args,
-};

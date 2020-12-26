@@ -1,5 +1,6 @@
-import './button.css';
 import '../../fonts/icomoon/style.css';
+import './button.css';
+import '../theme.css';
 
 export const createButton = ({
   primary = false,

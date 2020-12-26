@@ -44,7 +44,6 @@ Secondary.args = {
 
 export const Icon = Template.bind({});
 Icon.args = {
-  size: 'small',
   label: '',
   iconId: 'add',
 };

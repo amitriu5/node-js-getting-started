@@ -1,10 +1,10 @@
 import './page.css';
 import { createHeader } from '../Header/Header.js';
 
-export const createPage = ({ user, onLogout, onLogin, onCreateAccount }) => {
+export const createPage = () => {
   const article = document.createElement('article');
 
-  const header = createHeader({ onLogin, onLogout, onCreateAccount, user });
+  const header = createHeader();
   article.appendChild(header);
   const section = `
   <section>

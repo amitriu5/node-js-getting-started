@@ -1,45 +1,62 @@
-import './header.css';
-import { createButton } from '../Button/Button.js';
-
-export const createHeader = ({ user, onLogout, onLogin, onCreateAccount }) => {
+import '../../style.css'
+import '../theme.css';
+export const createHeader = () => {
   const header = document.createElement('header');
+  header.className = 'header';
 
-  const wrapper = document.createElement('div');
-  wrapper.className = 'wrapper';
+  const contentBox = document.createElement('div');
+  contentBox.className = ['head-bar','animated'].join(' ');
 
-  const logo = `<div>
-    <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-      <g fill="none" fillRule="evenodd">
-        <path
-          d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-          fill="#FFF" />
-        <path
-          d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-          fill="#555AB9" />
-        <path d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z" fill="#91BAF8" />
-      </g>
-    </svg>
-    <h1>Acme</h1>
+  const content = document.createElement('div');
+  content.className = 'head-bar-inner';
+
+  const row = `<div class="row">
+    <div class="col-sm-3 col-xs-6">
+        <a class="logo" href="index.html"><span>RS</span>card</a>
+        <!-- <a class="head-logo" href=""><img src="./../../img/rs-logo.png" alt="RScard"/></a> -->
+    </div>
+
+    <div class="col-sm-9 col-xs-6">
+        <div class="nav-wrap">
+            <nav id="nav" class="nav">
+                <ul class="clearfix">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#references">References</a></li>
+                    <li>
+                        <a href="category.html">Blog</a>
+                        <ul>
+                            <li><a href="single-image.html">Image Post</a></li>
+                            <li><a href="single-slider.html">Slider Post</a></li>
+                            <li><a href="single-video.html">Video Post</a></li>
+                            <li><a href="single-audio.html">Audio Post</a></li>
+                            <li><a href="single-vimeo.html">Vimeo Post</a></li>
+                            <li><a href="single-youtube.html">Youtube Post</a></li>
+                            <li><a href="single-dailymotion.html">Dailymotion Post</a></li>
+                            <li><a href="single.html">Without Media Post</a></li>
+                            <li><a href="typography.html">Typography Page</a></li>
+                            <li><a href="404.html">404 Page</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#calendar">Calendar <span></span></a></li>
+                    <li><a href="#contact">Contact <span></span></a></li>
+                </ul>
+            </nav>
+
+            <button class="btn-mobile btn-mobile-nav">Menu</button>
+            <button class="btn-sidebar btn-sidebar-open"><i class="rsicon rsicon-menu"></i></button>
+        </div>
+        <!-- .nav-wrap -->
+    </div>
   </div>`;
 
-  wrapper.insertAdjacentHTML('afterbegin', logo);
+  content.insertAdjacentHTML('afterbegin',row);
 
-  const account = document.createElement('div');
-  if (user) {
-    account.appendChild(createButton({ size: 'small', label: 'Log out', onClick: onLogout }));
-  } else {
-    account.appendChild(createButton({ size: 'small', label: 'Log in', onClick: onLogin }));
-    account.appendChild(
-      createButton({
-        size: 'small',
-        label: 'Sign up',
-        onClick: onCreateAccount,
-        primary: true,
-      })
-    );
-  }
-  wrapper.appendChild(account);
-  header.appendChild(wrapper);
+  contentBox.appendChild(content);
+
+  header.appendChild(contentBox);
 
   return header;
 };
